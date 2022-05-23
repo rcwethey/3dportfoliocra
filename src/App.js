@@ -1,7 +1,6 @@
 import { useEffect, useRef} from "react";
 import * as THREE from "three";
-import { LoopRepeat } from "three";
-import { CubeTextureLoader } from "three.js";
+import cubeJs from "./cube";
 
 function App() {
   const mountRef = useRef(null);
@@ -16,9 +15,13 @@ function App() {
     
     mountRef.current.appendChild( renderer.domElement );
     
+    //var cube = cubeJs;
+
     var geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
     var cubeMaterial = new THREE.MeshPhongMaterial( { color: 0xff9900 } );
     var cube = new THREE.Mesh( geometry, cubeMaterial );
+
+
 
     var plane = new THREE.PlaneBufferGeometry(10, 10);
     var planeMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
